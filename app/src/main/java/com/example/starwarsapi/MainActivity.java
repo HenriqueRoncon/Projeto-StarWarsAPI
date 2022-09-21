@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     androidx.cardview.widget.CardView cardVeiculos;
     androidx.cardview.widget.CardView cardEspecies;
     androidx.cardview.widget.CardView cardPlanetas;
+    androidx.cardview.widget.CardView cardAtracao;
+    androidx.cardview.widget.CardView cardGeolocalizacao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +84,28 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ListAllResultsSearch.class);
                 intent.putExtra("queryString", "planets/");
+
+                startActivity(intent);
+            }
+        });
+
+        cardAtracao = (CardView)findViewById(R.id.cardAtracao);
+        cardAtracao.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ListAllResultsSearch.class);
+                intent.putExtra("queryString", "atracoes/");
+
+                startActivity(intent);
+            }
+        });
+
+        cardGeolocalizacao = (CardView)findViewById(R.id.cardGeolocalizacao);
+        cardGeolocalizacao.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, LocalizacaoActivity.class);
+                intent.putExtra("queryString", "activity_localizacao/");
 
                 startActivity(intent);
             }

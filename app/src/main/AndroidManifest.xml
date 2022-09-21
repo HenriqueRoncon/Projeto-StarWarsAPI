@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.starwarsapi">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -17,8 +18,11 @@
         android:theme="@style/Theme.StarWarsAPI"
         tools:targetApi="31">
         <activity
+            android:name=".LocalizacaoActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListAllResultsSearch"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
